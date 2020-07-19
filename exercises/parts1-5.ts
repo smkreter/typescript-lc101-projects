@@ -46,6 +46,10 @@ console.log(`Similarly, ${spacecraftName} will take ${getDaysToLocation(kilomete
 // Part 4: Create a Spacecraft Class
 
 class Spacecraft {
+    constructor(name: string, speedMph: number){
+        this.name = name;
+        this.speedMph = speedMph;
+        }
     milesPerKilometer: number = 0.621;
     name: string;
     speedMph: number;
@@ -55,11 +59,6 @@ class Spacecraft {
         let daysToLocation: number = hoursToLocation/24;
         return daysToLocation;
     }
-    constructor(name: string, speedMph: number){
-        this.name = name;
-        this.speedMph = speedMph;
-    }
-
 }
 
 let spaceShuttle = new Spacecraft("Determination", 17500);
