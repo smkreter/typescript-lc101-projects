@@ -49,16 +49,17 @@ class Spacecraft {
     milesPerKilometer: number = 0.621;
     name: string;
     speedMph: number;
+    function getDaysToLocation(kilometersAway: number) {
+        let milesToLocation: number = kilometersAway*(this.milesPerKilometer);
+        let hoursToLocation: number = milesToLocation/(this.speedMph);
+        let daysToLocation: number = hoursToLocation/24;
+        return daysToLocation;
+    }
     constructor(name: string, speedMph: number){
         this.name = name;
         this.speedMph = speedMph;
     }
-    function getDaysToLocation(kilometersAway: number) {
-        let milesToLocation: number = kilometersAway*this.milesPerKilometer;
-        let hoursToLocation: number = milesToLocation/this.speedMph;
-        let daysToLocation: number = hoursToLocation/24;
-        return daysToLocation;
-    }
+
 }
 
 let spaceShuttle = new Spacecraft("Determination", 17500);
