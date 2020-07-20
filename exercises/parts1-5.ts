@@ -17,7 +17,7 @@ let daysToMars: number = hoursToMars/24;
 
 // Part 2: Print Days to Mars
 
-console.log(`${spacecraftName} will take ${daysToMars} to reach Mars.`);
+//console.log(`${spacecraftName} will take ${daysToMars} to reach Mars.`);
 
 
 
@@ -40,7 +40,7 @@ function getDaysToLocation(kilometersAway: number) {
 // the function and print the outputs for a Mars trip and a moon trip.
 
 
-console.log(`Similarly, ${spacecraftName} will take ${getDaysToLocation(kilometersToTheMoon)} days to reach the moon`);
+//console.log(`Similarly, ${spacecraftName} will take ${getDaysToLocation(kilometersToTheMoon)} days to reach the moon`);
 
 
 
@@ -51,21 +51,16 @@ class Spacecraft {
         this.name = name;
         this.speedMph = speedMph;
         }
+
     milesPerKilometer: number = 0.621;
     name: string;
     speedMph: number;
+
     getDaysToLocation(kilometersAway: number): number {
         let daysToLocation = kilometersAway*this.milesPerKilometer/this.speedMph/24;
         return daysToLocation;
     }
-    /*
-    function getDaysToLocation(kilometersAway: number): number {
-        let milesToLocation: number = kilometersAway*(this.milesPerKilometer);
-        let hoursToLocation: number = milesToLocation/(this.speedMph);
-        let daysToLocation: number = hoursToLocation/24;
-        return daysToLocation;
-    };
-    */
+
     printDaysToLocation(location: SpaceLocation) {
         console.log(`${this.name} would take ${this.getDaysToLocation(location.kilometersAway)} days to get to ${location.name}.`);
  }
@@ -73,7 +68,7 @@ class Spacecraft {
 
 let spaceShuttle = new Spacecraft("Determination", 17500);
 
-console.log(`When I make a new class and an instance of it, the spacecraft from that class, ${spaceShuttle.name}, will take ${spaceShuttle.getDaysToLocation(225000000)} days to reach Mars.`);
+//console.log(`When I make a new class and an instance of it, the spacecraft from that class, ${spaceShuttle.name}, will take ${spaceShuttle.getDaysToLocation(225000000)} days to reach Mars.`);
 
 //console.log(`The name of the shuttle is ${spaceShuttle.name} and its speed is ${spaceShuttle.speedMph}.`);
 
