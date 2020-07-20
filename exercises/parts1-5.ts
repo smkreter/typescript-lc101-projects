@@ -1,5 +1,6 @@
 // URL for the instructions: 
 // https://education.launchcode.org/intro-to-professional-web-dev/chapters/typescript/exercises.html 
+import { spaceLocation } from "./SpaceLocation";
 
 
 // Part 1: Declare (5) Variables With Type
@@ -53,18 +54,28 @@ class Spacecraft {
     milesPerKilometer: number = 0.621;
     name: string;
     speedMph: number;
-    function getDaysToLocation(kilometersAway: number) {
+    getDaysToLocation(kilometersAway: number): number {
+        let daysToLocation = kilometersAway*this.milesPerKilometer/this.speedMph/24;
+        return daysToLocation;
+    }
+    /*
+    function getDaysToLocation(kilometersAway: number): number {
         let milesToLocation: number = kilometersAway*(this.milesPerKilometer);
         let hoursToLocation: number = milesToLocation/(this.speedMph);
         let daysToLocation: number = hoursToLocation/24;
         return daysToLocation;
-    }
+    };
+    */
+    printDaysToLocation(location: SpaceLocation) {
+        console.log(`${this.name} would take ${this.getDaysToLocation(location.kilometersAway)} days to get to ${location.name}.`);
+ }
 }
 
 let spaceShuttle = new Spacecraft("Determination", 17500);
 
-console.log(`When I make a new class and an instance of it, the spacecraft from that class, ${spaceShuttle.name}, will take ${spaceShuttle.getDaysToLocation(225000000)} to reach Mars.`);
+console.log(`When I make a new class and an instance of it, the spacecraft from that class, ${spaceShuttle.name}, will take ${spaceShuttle.getDaysToLocation(225000000)} days to reach Mars.`);
 
+//console.log(`The name of the shuttle is ${spaceShuttle.name} and its speed is ${spaceShuttle.speedMph}.`);
 
 
 // Create an instance of the class here:
@@ -79,7 +90,26 @@ console.log(`When I make a new class and an instance of it, the spacecraft from 
 // Part 5: Export and Import the SpaceLocation Class
 // Add the required import statement BEFORE the part 1 concent.
 
+//I wasn't paying attention i thought we had to export spacecraft
+/*
+export class Spacecraft {
+    constructor(name: string, speedMph: number){
+        this.name = name;
+        this.speedMph = speedMph;
+        }
+    milesPerKilometer: number = 0.621;
+    name: string;
+    speedMph: number;
+    getDaysToLocation(kilometersAway: number): number {
+        let daysToLocation = kilometersAway*this.milesPerKilometer/this.speedMph/24;
+        return daysToLocation;
+    }
+    */
+
+
 
 // Add the printDaysToLocation function to the Spacecraft class.
 
 // Paste in the code from step 6 here:
+spaceShuttle.printDaysToLocation(new SpaceLocation('Mars', kilometersToMars));
+spaceShuttle.printDaysToLocation(new SpaceLocation('the Moon', kilometersToTheMoon));
