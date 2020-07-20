@@ -9,9 +9,9 @@ var SpaceLocation_1 = require("./SpaceLocation");
 var kilometersToMars = 225000000;
 var kilometersToTheMoon = 384400;
 // const milesPerKilometer: number = 0.621;
-var milesToMars = kilometersToMars * milesPerKilometer;
-var hoursToMars = milesToMars / speedMph;
-var daysToMars = hoursToMars / 24;
+//let milesToMars: number = kilometersToMars*milesPerKilometer;
+//let hoursToMars: number = milesToMars/speedMph;
+//let daysToMars: number = hoursToMars/24;
 // Part 2: Print Days to Mars
 //console.log(`${spacecraftName} will take ${daysToMars} to reach Mars.`);
 // Code an output statement here (use a template literal):

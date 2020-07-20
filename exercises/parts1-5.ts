@@ -10,9 +10,9 @@ const kilometersToMars: number = 225000000;
 const kilometersToTheMoon: number = 384400;
 // const milesPerKilometer: number = 0.621;
 
-let milesToMars: number = kilometersToMars*milesPerKilometer;
-let hoursToMars: number = milesToMars/speedMph;
-let daysToMars: number = hoursToMars/24;
+//let milesToMars: number = kilometersToMars*milesPerKilometer;
+//let hoursToMars: number = milesToMars/speedMph;
+//let daysToMars: number = hoursToMars/24;
 
 
 // Part 2: Print Days to Mars
